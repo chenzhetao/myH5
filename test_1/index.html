@@ -4,16 +4,36 @@
 	<title>Let's Start</title>
 	<meta charset="UTF-8">
 	<link type="text/css" rel="stylesheet" href="shouye.css">
+		<script>
+			function audioAutoPlay(id){
+				var audio = document.getElementById(id);
+				audio.play();
+				document.addEventListener("WeixinJSBridgeReady", function () {
+					audio.play();
+				}, false);
+				document.addEventListener('YixinJSBridgeReady', function() {
+					audio.play();
+				}, false);
+			}
+		</script>
 	</head>
-	
-	<body>
-		<audio src="./music/Little%20Girl%20In%20The%20World.mp3" controls="controls" autoplay="autoplay" loop="loop">
-		</audio>
+
+	<body onload="audioAutoPlay('bgm');">
+		<!--
+		<audio id="bgm" src="./music/music.mp3" preload="auto" autoplay="autoplay" controls="controls" ></audio>
+		-->
 		<div id="bg"></div>
 		<div id="content">
-		<p id="paiwo">first line and testing</p>
-		<p id="kaifang">second line<br>third line</p>
-		<a href="employ.html">A link >></a>
+		<p id="first">first line and testing</p>
+		<p id="second">second line</p>
+		<p id="third">third line</p>
 		</div>
+
+		<!--
+		<page id="c">spring</page>
+		<page id="x">summer</page>
+		<page id="q">autumn</page>
+		<page id="d">winter</page>
+		-->
 	</body>
 </html>
